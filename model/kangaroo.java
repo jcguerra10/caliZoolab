@@ -3,7 +3,6 @@ package model;
 	//constantes
 	
 	
-
 	//atributos
 	
 	public class kangaroo {
@@ -24,7 +23,6 @@ package model;
 		
 		private String heartRisk;
 		
-		private vacunationDate
 		
 	//relaciones
 	
@@ -177,5 +175,35 @@ package model;
 			
 		}
 		return heartRisk;
+	}
+	
+	public String vocalKangaroo(){
+		
+		String tname = "";
+		String n = name.toLowerCase ();
+	
+		if (n.charAt (0) == 'a')
+			tname = n;
+		if (n.charAt (0) == 'e')
+			tname = n;
+		if (n.charAt (0) == 'i')
+			tname = n;
+		if (n.charAt (0) == 'o')
+			tname = n;
+		if (n.charAt (0) == 'u')
+			tname = n;
+		//
+		if (n.charAt (n.length() - 1) == 'a')
+			tname = n;
+		if (n.charAt (n.length() - 1) == 'e')
+			tname = n;
+		if (n.charAt (n.length() - 1) == 'i')
+			tname = n;
+		if (n.charAt (n.length() - 1) == 'o')
+			tname = n;
+		if (n.charAt (n.length() - 1) == 'u')
+			tname = n;
+		return tname;
+		
 	}
 }
