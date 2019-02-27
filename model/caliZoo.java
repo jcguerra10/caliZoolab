@@ -7,9 +7,9 @@ package model;
 		
 		//relaciones
 		
-		private caliZoo zone1;
+		private kangarooZone zone1;
 		
-		private	caliZoo zone2;
+		private	boaredDragonZone zone2;
 		
 		//metodos
 		
@@ -25,20 +25,28 @@ package model;
 			this.zone = zone;
 		}
 		
-		public caliZoo getZone1 () {
+		public kangarooZone getZone1 () {
 			return zone1;
 		}
 		
-		public void setZone1 (caliZoo zone1) {
+		public void setZone1 (kangarooZone zone1) {
 			this.zone1 = zone1;
 		}
 		
-		public caliZoo getZone2 () {
+		public boaredDragonZone getZone2 () {
 			return zone2;
 		}
 		
-		public void setZone2 (caliZoo zone2) {
+		public void setZone2 (boaredDragonZone zone2) {
 			this.zone2 = zone2;
+		}
+		
+		//metodos
+		
+		public String totalAFood () {
+			String CFood = "";
+			
+			CFood = "la cantidad de comida es:" + zone1.calcTotFood();
 		}
 	}
 	

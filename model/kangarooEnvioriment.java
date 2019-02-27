@@ -67,4 +67,16 @@ package model;
 		return size;
 	}
 	
+	public double calcTFood () {
+		double food = 0.0;
+		
+		
+		food += kgo1 == null ? 0 : kgo1.getFood();
+		food += kgo2 == null ? 0 : kgo2.getFood();
+		food += kgo3 == null ? 0 : kgo3.getFood();
+		
+		
+		return food;
+	}
+	
 }

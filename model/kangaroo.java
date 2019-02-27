@@ -117,6 +117,7 @@ package model;
 	
 	//metodos
 	
+	//borrar atributo para solo mostrar la comida en el main
 	
 	public double calcFood (double weight) {
 		

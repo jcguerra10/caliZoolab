@@ -97,4 +97,14 @@ package model;
 		public void setKEnvo3 (kangarooEnvioriment KEnvo3) {
 			this.KEnvo3 = KEnvo3;
 		}
+		
+		//metodos 
+		
+		public double calcTotFood (){
+			double TFood = 0.0;
+			
+			TFood = KEnvo1.calcTFood()+KEnvo2.calcTFood()+KEnvo3.calcTFood();
+			
+			return TFood;
+		}
 	}

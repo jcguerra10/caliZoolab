@@ -98,17 +98,18 @@ package model;
 			return waterLiter;	
 		}
 		
-		public double calcFood () {
+		public String calcFood () {
 			
 			String warningAdvice = "";
 
 
-			if (calcFood = (Bdragon1.getFood() + Bdragon1.getFood()) < kilosMin){
-				String warningAdvice = "hay menos de" kilosMin "kilos, se necesita mas comida";
+			if (Bdragon1.getFood() + Bdragon2.getFood() < kilosMin){
+				warningAdvice = "hay menos de " + kilosMin + " kilos, se necesita mas comida";
 			}
 			else{
-				String warningAdvice = "hay mas de" kilos min "kilos de alimento";
+				warningAdvice = "hay mas de " + kilosMin + " kilos de alimento";
 
 			}
+			return warningAdvice;
 		}
 	}
