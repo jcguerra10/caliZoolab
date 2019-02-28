@@ -22,6 +22,9 @@ public class main {
 	
 	public void init () {
 		
+		
+		
+		
 		//1 = male  2 = female
 		
 		// kangaroo hugo = new kangaroo("hugo", 95.0, 1.68, 1, 50.48, "AB", kgo1.getIMC  new dated(20, 6, 2009));
@@ -58,15 +61,17 @@ public class main {
 		
 		switch (option){
 			case 1:
+			
+				kangaroo = new kangaroo [name, weight, height, gender, typeOfBlood]
+							
 				System.out.println ("Por favor dijite el nombre del kanguro:");
-				name = read.nextString();
+				name = read.nextLine();
 				System.out.println ("por favor digite el peso del kanguro:");
 				weight = read.nextDouble();
 				System.out.println ("Por favor dijite la alutra del kanguro:");
 				height = read.nextDouble();
 				System.out.println ("Por favor dijite el genero del kanguro 1- si es macho, 2- si es hembra:");
 				gender = read.nextInt();
-				// System.out.println (":") aca va la comida
 				System.out.println ("Por favor dijite el tipo de sangre del kanguro:");
 				typeOfBlood = read.nextString;
 				//System.out.println (":") aca va el IMC
@@ -76,7 +81,7 @@ public class main {
 				System.out.println ("1- ambiente no1");
 				System.out.println ("2- ambiente no2");
 				System.out.println ("3- ambiente no3");
-				op = read.nextInt;
+				op = read.nextInt;0
 				if (option == 1){
 					
 				}else if (option == 2){
