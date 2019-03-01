@@ -1,11 +1,10 @@
 package model;
 
-	//constantes
-	
-	
-	//atributos
-	
 	public class kangaroo {
+		//d = date
+		java.util.Date d = new Date();
+		
+		//atributos
 		
 		private String name;
 		
@@ -82,12 +81,7 @@ package model;
 		this.kgbirth = kgbirth;
 	}
 	
-
-	
-	
 	//metodos
-	
-	//borrar atributo para solo mostrar la comida en el main
 	
 	public double calcFood () {
 		double food = 0.0;
@@ -183,4 +177,28 @@ package model;
 		return tname;
 		
 	}
+	
+	public String vaccine (){
+		String thename = "";
+		
+		if (kgbirth.getYear() < d.getYear()){
+			thename = "A"+ name +"todavia necesita esperar para ser vacunado";
+		}else if (kgbirth.getYear() > d.getYear()){
+			thename = name + "ya fue vacunado";
+		}else if (kgbirth.getYear() == d.getYear()){
+			if (kgbirth.getMonth() < d.getMonth()){
+				thename = "A"+ name + "todavia necesita esperar para ser vacunado";
+			}else if (kgbirth.getDay() > d.getDay()){
+				thename = name + "el kanguro ya fue vacunado";
+			}else if (kgbirth.getDay() == d.getDay()){
+				thename = name + "necesita vacunacion";
+			}
+		}
+		return thename;
+		
+		
+		
+	}
+
+
 }
