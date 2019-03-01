@@ -71,12 +71,25 @@ package model;
 		double food = 0.0;
 		
 		
-		food += kgo1 == null ? 0 : kgo1.getFood();
-		food += kgo2 == null ? 0 : kgo2.getFood();
-		food += kgo3 == null ? 0 : kgo3.getFood();
+		food += kgo1 == null ? 0 : kgo1.calcFood();
+		food += kgo2 == null ? 0 : kgo2.calcFood();
+		food += kgo3 == null ? 0 : kgo3.calcFood();
 		
 		
 		return food;
+	}
+	
+	public String namew () {
+		String allname = "";
+		
+		if (kgo1.vocalKangaroo() != null)
+			allname += kgo1.vocalKangaroo();
+		if (kgo2.vocalKangaroo() != null)
+			allname += kgo1.vocalKangaroo();
+		if (kgo3.vocalKangaroo() != null)
+			allname += kgo1.vocalKangaroo();
+		
+		return allname;
 	}
 	
 }

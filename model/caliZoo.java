@@ -47,6 +47,18 @@ package model;
 			String CFood = "";
 			
 			CFood = "la cantidad de comida es:" + zone1.calcTotFood();
+			
+			return CFood;
 		}
+		
+		public String totNames () {
+			String namess = "";
+			
+			if (zone1.tvocalnames() != null) {
+				namess = zone1.tvocalnames();
+			}
+			return namess;
+		}
+		
 	}
 	

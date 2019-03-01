@@ -15,13 +15,7 @@ package model;
 		
 		private int gender;
 		
-		private double food;
-		
 		private String typeOfBlood;
-		
-		private double IMC;
-		
-		private String heartRisk;
 		
 		
 	//relaciones
@@ -30,16 +24,13 @@ package model;
 	
 	//metodos
 	
-	public kangaroo(String name, double weight, double height, int gender, double food, String typeOfBlood, dated Kgbirth, double IMC){
+	public kangaroo(String name, double weight, double height, int gender, String typeOfBlood, dated Kgbirth){
 		this.name = name;
 		this.weight = weight;
 		this.height = height;
 		this.gender = gender;
-		this.food = food;
 		this.typeOfBlood = typeOfBlood;
 		this.kgbirth = kgbirth;
-		this.IMC = IMC;
-		this.heartRisk = heartRisk;
 	}
 	
 	public String getName () {
@@ -74,13 +65,6 @@ package model;
 		this.gender = gender;
 	}
 	
-	public double getFood (){
-		return food;
-	}
-	
-	public void setFood (double food) {
-		this.food = food;
-	}
 	
 	public String getTypeOfBlood () {
 		return typeOfBlood;
@@ -98,28 +82,15 @@ package model;
 		this.kgbirth = kgbirth;
 	}
 	
-	public double getIMC () {
-		return IMC;
-	}
-	
-	public void setIMC (double IMC) {
-		this.IMC = IMC;
-	}
-	
-	public String getHeartRisk () {
-		return heartRisk;
-	}
-	
-	public void setHeartRisk (String heartRisk) {
-		this.heartRisk = heartRisk;
-	}
+
 	
 	
 	//metodos
 	
 	//borrar atributo para solo mostrar la comida en el main
 	
-	public double calcFood (double weight) {
+	public double calcFood () {
+		double food = 0.0;
 		
 		if (weight < 30){
 			
@@ -137,27 +108,32 @@ package model;
 		return food;
 	}
 	
-	public double calcIMC(double weight, double height) {
+	public double calcIMC() {
 		//peso sobre altura al cuadrado
+		double IMC = 0.0;
+		
 		IMC = weight / (height * height);
+		
 		return IMC;
 	}
 	
-	public String calcHeartRisk(String heartRisk, double IMC, String typeOfBlood) {
+	public String calcHeartRisk() {
 		
-		if (IMC < 18 && typeOfBlood.equals ("a")|| typeOfBlood.equals("ab")) {
+		String heartRisk = "";
+		
+		if (calcIMC() < 18 && typeOfBlood.equals ("a")|| typeOfBlood.equals("ab")) {
 			
 			heartRisk.equals ("Riesgo Bajo");
 			
 		}
-		if(IMC < 18 && typeOfBlood != ("a")||typeOfBlood != ("ab")){
+		if(calcIMC() < 18 && typeOfBlood != ("a")||typeOfBlood != ("ab")){
 			
 			heartRisk.equals ("Riesgo Bajo");
 			
 		}
 		//
 		
-		if (IMC >= 18 && IMC <=25){
+		if (calcIMC() >= 18 && calcIMC() <=25){
 			
 			heartRisk.equals ("riesgo bajo");
 			
@@ -165,12 +141,12 @@ package model;
 		
 		//
 		
-		if (IMC >= 25 && typeOfBlood.equals("a") || typeOfBlood.equals("b") || typeOfBlood.equals("o")) {
+		if (calcIMC() >= 25 && typeOfBlood.equals("a") || typeOfBlood.equals("b") || typeOfBlood.equals("o")) {
 			
 			heartRisk.equals ("riesgo alto");
 			
 		}
-		if (IMC >= 25 && typeOfBlood.equals("ab")) {
+		if (calcIMC() >= 25 && typeOfBlood.equals("ab")) {
 			
 			heartRisk.equals ("riesgo moderado");
 			

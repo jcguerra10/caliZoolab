@@ -107,4 +107,17 @@ package model;
 			
 			return TFood;
 		}
+		
+		public String tvocalnames () {
+			String anames = "";
+			
+			if (KEnvo1.namew() != null)
+				anames += KEnvo1.namew();
+			if (KEnvo1.namew() != null)
+				anames += KEnvo2.namew();
+			if (KEnvo1.namew() != null)
+				anames += KEnvo3.namew();
+			
+			return anames;
+		}
 	}

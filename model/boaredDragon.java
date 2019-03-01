@@ -13,19 +13,17 @@ package model;
 		
 		private double food;
 		
-		private double IMC;
-		
 		//metodos
 	
 		
-		public boaredDragon(String name, double weight, double height, int gender, double food, double IMC) {
+		public boaredDragon(String name, double weight, double height, int gender, double food) {
 			
 			this.name = name;
 			this.weight = weight;
 			this.height = height;
 			this.gender = gender;
 			this.food = food;
-			this.IMC = IMC;
+	
 		}
 		
 		public String getName() {
@@ -68,17 +66,11 @@ package model;
 			this.food = food;
 		}
 		
-		public double getIMC (){
-			return IMC;
-		}
-
-		public void setIMC (double IMC) {
-			this.IMC = IMC;	
-		}
-		
 		//metodos
 		
-		public double calcIMC (double weight, double height) {
+		public double calcIMC () {
+			double IMC = 0.0;
+			
 			//peso sobre altura al cuadrado
 			IMC = weight / (height * height);
 			return IMC;
