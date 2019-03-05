@@ -108,16 +108,77 @@ package model;
 			return TFood;
 		}
 		
-		public String tvocalnames () {
-			String anames = "";
+		
+		public String addKangaroo (kangaroo nuevokgo, int opEnvioriment){
+			String msj = "";
 			
-			if (KEnvo1.namew() != null)
-				anames += KEnvo1.namew();
-			if (KEnvo1.namew() != null)
-				anames += KEnvo2.namew();
-			if (KEnvo1.namew() != null)
-				anames += KEnvo3.namew();
-			
-			return anames;
+			if (opEnvioriment == 1) {
+				msj += KEnvo1.addKgo(nuevokgo);
+			}else if (opEnvioriment == 2) {
+				msj += KEnvo2.addKgo(nuevokgo);
+			}else if (opEnvioriment == 3) {
+				msj += KEnvo3.addKgo(nuevokgo);
+			}
+			return msj;
 		}
+		
+	public String showZone(){
+		String msg = "";
+		
+		if (KEnvo1 != null){
+			msg += "=================================================================== \n";
+			msg += "=================================================================== \n";
+			msg += "El primer ambiente tiene las siguientes caracteristicas: \n";
+			msg += KEnvo1.SEvioriment()+"\n";
+			msg += "=================================================================== \n";
+			msg += "=================================================================== \n";
+		}
+		if (KEnvo2 != null){
+			msg += "=================================================================== \n";
+			msg += "=================================================================== \n";
+			msg += "El segundo ambiente tiene las siguientes caracteristicas: \n";
+			msg += KEnvo2.SEvioriment()+"\n";
+			msg += "=================================================================== \n";
+			msg += "=================================================================== \n";
+		}
+		if (KEnvo3 != null){
+			msg += "=================================================================== \n";
+			msg += "=================================================================== \n";
+			msg += "El tercer ambiente tiene las siguientes caracteristicas: \n";
+			msg += KEnvo3.SEvioriment()+"\n";
+			msg += "=================================================================== \n";
+			msg += "=================================================================== \n";
+		}
+		
+		
+		return msg;
+	}
+		
+		public double totalZone (){
+			double total = 0.0;
+				if (KEnvo1.calcSize() != 0.0)
+					total += KEnvo1.calcSize(); 
+				if (KEnvo2.calcSize() != 0.0)
+					total += KEnvo2.calcSize();
+				if (KEnvo3.calcSize() != 0.0)
+					total += KEnvo3.calcSize();
+			return total;
+		}
+		
+		public String removeKgo (int kang, int opEnvioriment){
+			String msj = "";
+			
+			if (opEnvioriment == 1){
+				msj += KEnvo1.removeKgo(kang);
+			}else if (opEnvioriment == 2){
+				msj += KEnvo2.removeKgo(kang);
+			}else if (opEnvioriment == 3){
+				msj += KEnvo3.removeKgo(kang);
+			}else{
+				msj += "opcion no valida";
+			}
+			return msj;
+	
+		}
+		
 	}

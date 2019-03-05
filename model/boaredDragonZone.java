@@ -93,7 +93,7 @@ package model;
 		//methods
 		
 		public double calcWaterLiter (double waterLiter){
-			waterLiter = ((Bdragon1.getIMC() * 0.75) + (Bdragon2.getIMC() * 0.75));
+			waterLiter = ((Bdragon1.calcIMC() * 0.75) + (Bdragon2.calcIMC() * 0.75));
 			
 			return waterLiter;	
 		}

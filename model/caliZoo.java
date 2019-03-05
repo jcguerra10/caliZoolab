@@ -3,7 +3,7 @@ package model;
 	public class caliZoo{
 		//atributos
 		
-		private int zone;
+		private String name;
 		
 		//relaciones
 		
@@ -13,17 +13,20 @@ package model;
 		
 		//metodos
 		
-		public caliZoo (int zone, caliZoo zone1, caliZoo zone2) {
-			this.zone = zone;
+		public caliZoo (String name, kangarooZone zone1, boaredDragonZone zone2) {
+			this.name = name;
+			this.zone1 = zone1;
+			this.zone2 = zone2;
 		}
 		
-		public int getZone () {
-			return zone;
+		public String getName () {
+			return name;
 		}
 		
-		public void setZone (int zone) {
-			this.zone = zone;
+		public void setName (String name) {
+			this.name = name;
 		}
+		
 		
 		public kangarooZone getZone1 () {
 			return zone1;
@@ -43,22 +46,40 @@ package model;
 		
 		//metodos
 		
-		public String totalAFood () {
-			String CFood = "";
-			
-			CFood = "la cantidad de comida es:" + zone1.calcTotFood();
-			
-			return CFood;
-		}
-		
-		public String totNames () {
-			String namess = "";
-			
-			if (zone1.tvocalnames() != null) {
-				namess = zone1.tvocalnames();
-			}
-			return namess;
-		}
-		
-	}
+		public String addKgoo(kangaroo nuevokgo, int opEnvironment){
 	
+			String msg = "";
+			if (zone1 != null)
+				msg += zone1.addKangaroo(nuevokgo, opEnvironment);
+			return msg;
+		}
+		
+		public String showZoo(){
+			String msg = "\n";
+			
+			if (zone1 != null){
+				msg += "==========================================================================================================================\n";
+				msg += "La zona de los canguros tiene un area de "+zone1.totalZone()+" metros cuadrados y cuenta con los siguientes ambientes: \n";
+				msg += zone1.showZone()+"\n";
+				msg += "==========================================================================================================================\n";
+			}	
+			return msg;
+		}
+		
+		public String shozoo(){
+			
+			String msg = " ";
+			
+			msg +=  zone1.showZone();
+			
+			return msg;
+		}
+		
+		public String removeKgo(int kang, int opEnvironment){
+			String msj = "";
+			if (zone1 != null){
+				msj += zone1.removeKgo(kang, opEnvironment);
+			}
+			return msj;
+		}	
+}

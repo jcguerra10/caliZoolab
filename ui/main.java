@@ -14,11 +14,6 @@ public class main {
 		init ();
 	}
 	
-	public static void main (String[] args) {
-		
-		main m = new main ();
-	
-	}
 	
 	public void init () {
 		
@@ -39,105 +34,142 @@ public class main {
 		boaredDragon paco = new boaredDragon ("paco", 34.0, 1.0, 1, 20.0);
 		boaredDragon nori = new boaredDragon ("nori", 32.0, 0.98, 2, 22.0); 
 		
-		kangarooEnvioriment KEnvo1 = new kangarooEnvioriment (500, hugo, kelly, paquita);
-		kangarooEnvioriment KEnvo2 = new kangarooEnvioriment (400, noori, maria, pablo);
-		kangarooEnvioriment KEnvo3 = new kangarooEnvioriment (400, firu, pau, lau);
+		kangarooEnvioriment KEnvo1 = new kangarooEnvioriment (hugo, kelly, paquita);
+		kangarooEnvioriment KEnvo2 = new kangarooEnvioriment (noori, maria, pablo);
+		kangarooEnvioriment KEnvo3 = new kangarooEnvioriment (firu, pau, lau);
 		
 		kangarooZone zone1 = new kangarooZone (45.0, 75.0, 45.0, 98.0, 80, KEnvo1, KEnvo2, KEnvo3);
 		boaredDragonZone zone2 = new boaredDragonZone (46.0, 60.0, 36, 79.0, 500, paco, nori);
 		
-
-		//menu
-			Scanner read = new Scanner (System.in);
-			int option;
-			
-			System.out.println ("Menu");
-			System.out.println ("1- Crear nuevo kanguro ");
-			System.out.println ("2- Eliminar kanguro ");
-			System.out.println ("3- Cambiar kanguro de ambiente");
-			System.out.println ("4- Cuales son los kanguros que los nombres empiezan y terminan en vocal");
-			System.out.println ("5- Dar el reporte de las fechas de vacunacion de los kanguros");
-			option = read.nextInt();
-			
-			switch (option){
-				case 1:
-					String name;
-					double weight;
-					double height;
-					int gender;
-					String typeOfBlood;
-					
-					System.out.println ("Por favor dijite el nombre del kanguro:");
-					name = read.nextLine();
-					System.out.println ("por favor digite el peso del kanguro:");
-					weight = read.nextDouble();
-					System.out.println ("Por favor dijite la alutra del kanguro:");
-					height = read.nextDouble();
-					System.out.println ("Por favor dijite el genero del kanguro 1- si es macho, 2- si es hembra:");
-					gender = read.nextInt();
-					System.out.println ("Por favor dijite el tipo de sangre del kanguro:");
-					typeOfBlood = read.nextLine();
-					
-					kangaroo kgo = new kangaroo (name, weight, height, gender, typeOfBlood);
-					
-					System.out.println ("Por favor dijite el ambiente que quiere agragar el kanguro:");
-					System.out.println ("1- ambiente no1");
-					System.out.println ("2- ambiente no2");
-					System.out.println ("3- ambiente no3");
-					
-					int op = read.nextInt();
-					if (op == 1){
-						if (KEnvo1.getKgo1() == null){
-							//aqui va kangaroo
-						}else if (KEnvo1.getKgo2() == null){
-							//kangaroo
-						}else if (KEnvo1.getKgo3() == null){
-							//kangaroo
-						}
-					}
-					else if (op == 2){	
-						if (KEnvo2.getKgo1()== null){
-							//aqui va kangaroo
-						}else if (KEnvo2.getKgo2() == null){
-							//kangaroo
-						}else if (KEnvo3.getKgo3() == null){
-							//kangaroo
-						}
-					}
-					else if (op == 3){
-						if (KEnvo3.getKgo1() == null){
-							//aqui va kangaroo
-						}else if (KEnvo3.getKgo2() == null){
-							//kangaroo
-						}else if (KEnvo3.getKgo3() == null){
-							//kangaroo
-						}
-						else{
-						System.out.println ("No es un numero valido");
-						}
-					}
-					break;
-				case 2:
-				
-					break;
-				case 3:
-					
-					break;	
-				case 4:
-				
-					if (zoo.totNames() != null)
-						System.out.println ("los nombres son: " + zoo.totNames() );
-					else
-						System.out.println ("no existe ningun kanguro que empieze y termine con vocal");
-					break;
-				case 5:
-					
-					break;
-				default:
-					System.out.println ("Digito no valido");
-				
-			}	
+		zoo = new caliZoo ("zoologico de Cali", zone1, zone2);
 		
 	}
+	public static void main (String[] args) {
+		
+		main m = new main();
+		m.msg();
 	
+	}
+		// menu
+		
+		public void msg(){
+		
+			Scanner scanStr = new Scanner (System.in);
+			Scanner scanInt = new Scanner (System.in);
+			Scanner scanDou = new Scanner (System.in);
+			//
+			System.out.println ("*****************************************************************************************************************************");
+			// System.out.println ("Menu");
+			// System.out.println ("1- Crear nuevo kanguro ");
+			// System.out.println ("2- Eliminar kanguro ");
+			// System.out.println ("3- Cambiar kanguro de ambiente");
+			// System.out.println ("4- Cuales son los kanguros que los nombres empiezan y terminan en vocal");
+			// System.out.println ("5- Mostrar los kanguros");
+			// System.out.println ("6- salir");
+			
+			
+			int option = 0;
+			boolean exit = false;
+			
+			while (!exit){
+				menu();
+				option = scanInt.nextInt();
+			
+				switch (option){
+					case (1):
+						String name;
+						double weight;
+						double height;
+						int gender;
+						String typeOfBlood;
+						int day;
+						int month;
+						int year;
+						
+						System.out.println ("Por favor digite el nombre del canguro:");
+						name = scanStr.nextLine();
+						System.out.println ("Por favor digite el peso en kg del canguro:");
+						weight = scanDou.nextDouble();
+						scanDou.nextLine();
+						System.out.println ("Por favor digite la altura en metros del canguro:");
+						height = scanDou.nextDouble();
+						scanDou.nextLine();
+						System.out.println ("Por favor digite el genero del canguro 1- si es macho, 2- si es hembra:");
+						gender = scanInt.nextInt();
+						scanInt.nextLine();
+						System.out.println ("Por favor digite el tipo de sangre del canguro:");
+						typeOfBlood = scanStr.nextLine();
+						System.out.println ("Porfavor digite el dia de nacimiento");
+						day = scanInt.nextInt();
+						scanInt.nextLine();
+						System.out.println ("Porfavor digite el mes de nacimiento");
+						month = scanInt.nextInt();
+						scanInt.nextLine();
+						System.out.println ("Porfavor digite el anio de nacimiento");
+						year = scanInt.nextInt();
+						scanInt.nextLine();
+						
+						kangaroo nuevokgo = new kangaroo (name, weight, height, gender, typeOfBlood, new dated (day, month, year));
+						
+						System.out.println ("Por favor dijite el ambiente que quiere agregar el canguro:");
+						System.out.println ("1- ambiente no1");
+						System.out.println ("2- ambiente no2");
+						System.out.println ("3- ambiente no3");
+						
+						int opEnvironment = scanInt.nextInt();
+						
+						System.out.println(zoo.addKgoo(nuevokgo, opEnvironment));
+						break;
+					case (2):
+						
+						int kang;
+						
+						System.out.println ("En que ambiente esta el canguro que quiere eliminar?:");
+						System.out.println ("1. ambiente");
+						System.out.println ("2. ambiente");
+						System.out.println ("3. ambiente");
+						opEnvironment = scanInt.nextInt();
+						scanInt.nextLine();
+						System.out.println ("Que canguro quiere cambiar?");
+						System.out.println ("1.kanguro");
+						System.out.println ("2.kanguro");
+						System.out.println ("3.kanguro");
+						kang = scanInt.nextInt();
+						scanInt.nextLine();
+						System.out.println(zoo.removeKgo(kang, opEnvironment));
+						break;
+					case (3):
+						
+						break;	
+					case (4):
+					
+						// if ((zoo.totNames()) != null)
+							// System.out.println ("los nombres son: " + zoo.totNames() );
+						// else
+							// System.out.println ("no existe ningun kanguro que empieze y termine con vocal");
+						// break;
+					case (5):
+							System.out.println(zoo.showZoo());
+						break;
+					case (6):
+						exit = true;
+						break;
+					default:
+						System.out.println ("Digito no valido");
+					
+				}
+			}		
+		}
+		
+		public void menu(){
+		
+			System.out.println("*****************************************************************************************************************************");
+			System.out.println("Menu");
+			System.out.println("1- Crear nuevo kanguro ");
+			System.out.println("2- Eliminar kanguro ");
+			System.out.println("3- Cambiar kanguro de ambiente");
+			// System.out.println("4- Cuales son los kanguros que los nombres empiezan y terminan en vocal");
+			System.out.println("5- Mostrar los kanguros");
+			System.out.println("6- salir");
+		}
 }

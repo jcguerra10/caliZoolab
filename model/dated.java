@@ -10,7 +10,7 @@ package model;
 		
 		private int year;
 		
-	  //metodos
+		//
 		
 		public dated (int day, int month, int year) {
 			this.day = day;
@@ -41,5 +41,9 @@ package model;
 		public void setYear (int year) {
 			this.year = year;
 		}
+		//metodos
+		
+		
+			
 		
 	}
