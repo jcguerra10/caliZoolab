@@ -139,15 +139,33 @@ public class main {
 						System.out.println(zoo.removeKgo(kang, opEnvironment));
 						break;
 					case (3):
+					
+						System.out.println("De que ambiente quiere cambiar el canguro: \n");
+						System.out.println("1- AMBIENTE");
+						System.out.println("2- AMBIENTE");
+						System.out.println("3- AMBIENTE");
 						
+						int opEnvironment1 = scanInt.nextInt();
+
+						System.out.println("Que canguro quiere cambiar: \n");
+						System.out.println("1- CANGURO");
+						System.out.println("2- CANGURO");
+						System.out.println("3- CANGURO");
+						
+						kang = scanInt.nextInt();
+						
+						System.out.println("A que ambiente quiere cambiar el canguro: \n");
+						System.out.println("1- CANGURO");
+						System.out.println("2- CANGURO");
+						System.out.println("3- CANGURO");
+						
+						int opEnvironment2 = scanInt.nextInt();
+						
+						System.out.println (zoo.changeKangaroo(kang, opEnvironment1, opEnvironment2));
 						break;	
 					case (4):
 					
-						// if ((zoo.totNames()) != null)
-							// System.out.println ("los nombres son: " + zoo.totNames() );
-						// else
-							// System.out.println ("no existe ningun kanguro que empieze y termine con vocal");
-						// break;
+						break;
 					case (5):
 							System.out.println(zoo.showZoo());
 						break;

@@ -180,5 +180,40 @@ package model;
 			return msj;
 	
 		}
+	
 		
+	public kangarooEnvioriment getEnvironment(int opEnvironment1){
+		kangarooEnvioriment x = null;
+		
+		if(opEnvironment1 == 1)
+		{
+			x = KEnvo1;
+		}
+		if(opEnvironment1 == 2)
+		{
+			x = KEnvo2;
+		}
+		if(opEnvironment1 == 3)
+		{
+			x = KEnvo3;
+		}
+		
+		return x;
 	}
+	
+	public String changeKangaroo(int kang, int opEnvironment1, int opEnvironment2){
+		String msg = "";
+
+		kangarooEnvioriment eliminateKofEnvironment = getEnvironment(opEnvironment1);
+		kangarooEnvioriment addKtoEnvironment = getEnvironment(opEnvironment2);
+		kangaroo x = eliminateKofEnvironment.selectedKangaroo(kang);
+		msg += addKtoEnvironment.addChangeKgo(x);
+		if(addKtoEnvironment.addChangeKgo(x).equals("Ambiente lleno. No se cambio el canguro") || addKtoEnvironment.addChangeKgo(x).equals("Ya hay un macho en el ambiente. No se cambio el canguro")){
+			msg += "";
+		}else{
+			msg += eliminateKofEnvironment.removeChangeKangaroo(kang);
+		}
+		return msg;
+	}
+	
+}

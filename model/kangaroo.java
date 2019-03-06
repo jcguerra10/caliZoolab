@@ -195,8 +195,7 @@ import java.time.temporal.ChronoUnit;
 		return msj;
 	}
 	
-	public String vaccination()
-	{
+	public String vaccination(){
 		String msj ="";
 		int year = kgbirth.getYear()+1;		
 
@@ -226,8 +225,7 @@ import java.time.temporal.ChronoUnit;
 		return msj;
 	}
 	
-	public boolean vowel()
-	{
+	public boolean vowel(){
 		boolean vowel = false;
 		int first = 0, last = name.length()-1;
 
@@ -242,8 +240,7 @@ import java.time.temporal.ChronoUnit;
 		return vowel;
 	}
 
-	public String whoVowel()
-	{
+	public String whoVowel(){
 		String msg = "";
 
 		if (vowel())
@@ -253,8 +250,7 @@ import java.time.temporal.ChronoUnit;
 		return msg;
 	}
 
-	public String showVowels()
-	{
+	public String showVowels(){
 		String msg = "";
 
 		if (vowel())

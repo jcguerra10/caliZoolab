@@ -92,7 +92,7 @@ package model;
 		}
 		//methods
 		
-		public double calcWaterLiter (double waterLiter){
+		public double calcWaterLiter (){
 			waterLiter = ((Bdragon1.calcIMC() * 0.75) + (Bdragon2.calcIMC() * 0.75));
 			
 			return waterLiter;	
@@ -112,4 +112,24 @@ package model;
 			}
 			return warningAdvice;
 		}
+		public String SEvioriment() {
+		String msg = "";
+		
+		if(Bdragon2 != null)
+		{
+		msg += "El primer dragon barbado de este ambiente es:\n \n"+Bdragon1.sDragon()+"\n";
+		msg += "-------------------------------------------------------------------- \n";
+		}
+		if(Bdragon2 != null)
+		{
+		msg += "El segundo dragon barbado de este ambiente es:\n \n"+Bdragon2.sDragon()+"\n";
+		msg += "-------------------------------------------------------------------- \n";
+		}
+		
+		
+		msg += "Este ambiente cuenta con "+calcFood()+" kg de comida \n";
+		msg += "Este ambiente cuenta con "+calcWaterLiter()+" litros de agua \n";
+		
+		return msg;
 	}
+}

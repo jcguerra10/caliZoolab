@@ -1,6 +1,6 @@
 package model;
 
-	public class caliZoo{
+public class caliZoo{
 		//atributos
 		
 		private String name;
@@ -62,6 +62,10 @@ package model;
 				msg += "La zona de los canguros tiene un area de "+zone1.totalZone()+" metros cuadrados y cuenta con los siguientes ambientes: \n";
 				msg += zone1.showZone()+"\n";
 				msg += "==========================================================================================================================\n";
+				msg += "La zona de los dragones barbados cuenta con la zona:\n";
+				msg += zone2.SEvioriment()+"\n";
+				msg += "==========================================================================================================================\n";
+				
 			}	
 			return msg;
 		}
@@ -82,4 +86,13 @@ package model;
 			}
 			return msj;
 		}	
+		
+		
+		public String changeKangaroo(int kang, int opEnvironment1, int opEnvironment2){
+			String msg = "";
+			
+			msg += zone1.changeKangaroo(kang, opEnvironment1, opEnvironment2);
+			
+			return msg;
+		}
 }

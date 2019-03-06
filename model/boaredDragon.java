@@ -76,5 +76,17 @@ package model;
 			return IMC;
 		}
 		
+		public String sDragon(){
+		String msj = "";
+		
+			msj += "El nombre del dragon barbado es: " + name + "\n";
+			msj += "El dragon barbado pesa: " + weight + "Kg. \n";
+			msj += "el dragon barbado Mide: " + height + "m. \n";
+			msj += "El genero del dragon barbado es: " + gender + "\n";
+			msj += "Tiene un imc de: " + calcIMC() + "\n";
+
+		return msj;
+	}
+		
 		
 	}

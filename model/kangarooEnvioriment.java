@@ -256,4 +256,110 @@ package model;
 		}
 		return msj;	
 	}
+	// public boolean knowKangaroo (){
+		// boolean empty = false;
+		
+		// if (kgo1 == null) {
+				// empty = true;
+			// }else if (kgo2 == null) {
+				// empty = true;
+			// }else if (kgo3 == null) {
+				// empty = true;
+			// }
+		// return empty;		
+	// }
+	
+	
+	// public String changeKgo (kangaroo changeKang){
+		// String mess = "";
+		
+		// if (kgo1 == null) {
+				// kgo1 = changeKang;
+				// mess = "SE CAMBIO EL NUEVO KANGURO";
+			// }else if (kgo2 == null) {
+				// kgo2 = changeKang;
+				// mess = "SE CAMBIO EL NUEVO KANGURO";
+			// }else if (kgo3 == null) {
+				// kgo3 = changeKang;
+				// mess = "SE CAMBIO EL NUEVO KANGURO";
+			// }
+			// return mess;
+	// }
+	
+	public kangaroo selectedKangaroo (int kang){
+		kangaroo changeKang = null;
+		
+		if (kang == 1){
+			if (kgo1 != null)
+			changeKang = kgo1;
+		}else if (kang == 2){
+			if (kgo2 != null)
+			changeKang = kgo2;
+		}else if (kang == 3){
+			if (kgo3 != null)
+			changeKang = kgo3;
+		}
+		return changeKang;
+	
+	}
+	
+	public String addChangeKgo(kangaroo nuevokgo){
+		
+		String msg = "";
+		if (kgo1 == null || kgo2 == null || kgo3 == null){
+			
+			if(nuevokgo.getGender() == 1) {
+				if (mach()) {
+					msg = "Ya hay un macho en el ambiente. No se cambio el canguro";
+				}
+			}else if (kgo1 == null){
+				kgo1 = nuevokgo;
+				msg = "El canguro ha sido cambiado ";
+			}else if (kgo2 == null) {
+				kgo2 = nuevokgo;
+				msg = "El canguro ha sido cambiado ";
+			}else if (kgo3 == null) {
+				kgo3 = nuevokgo;
+				msg = "El canguro ha sido cambiado ";
+			}
+			
+		}else {
+				msg = "Ambiente lleno. No se cambio el canguro";
+		}
+		
+		return msg;
+	}
+	
+	public String removeChangeKangaroo(int kang){
+		String msg = "";
+		 if(kang == 1) {	
+				if (kgo1 != null){		   	
+					kgo1 = null;
+					msg += "";
+				}else {
+					msg += "";
+				}
+			
+		    }else if(kang == 2) {		
+				if (kgo2 != null){   	
+					kgo2 = null;
+					msg += "";
+				}else {
+					msg += "";
+				}
+						
+			}else if(kang==3){
+			   if (kgo3 != null){   	
+					kgo3 = null;
+					msg += "";
+			   }else{
+					msg += "";
+				}
+			
+			}else{		
+				msg += "";
+			}
+		   
+		return msg;
+	}
 }

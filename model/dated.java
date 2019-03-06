@@ -42,8 +42,6 @@ package model;
 			this.year = year;
 		}
 		//metodos
-		
-		
-			
+	
 		
 	}
